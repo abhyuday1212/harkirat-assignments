@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<br>
+
+<h1>All toodo</h1>
+<div id="inputs">
+    <input id="title" type="text" placeholder="Enter title">
+    <input id="description" type="text" placeholder="Enter description">
+    <button onclick="addToDos( )">Add todo</button>
+</div>
+</br>
+<div id="container">
+
+</div>
+
+<script>
+    // Method 1 f adding elemens
+
+
+    function addToDos() {
+        const titleVal = document.getElementById("title").value
+        const descriptionVal = document.getElementById("description").value
+        const originalHtml = document.getElementById("container").innerHTML
+        document.getElementById("container").innerHTML = originalHtml + `<div> <div>${titleVal}</div>
+        <div>${descriptionVal}</div>
+        <button>Mark as complete </button> 
+        </div>`
+    }
+
+</script>
+</body>
+
+</html>

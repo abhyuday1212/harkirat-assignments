@@ -4,7 +4,18 @@
  * the function should return a promise just like before
  */
 
-function sleep(milliseconds) {
+function khudkafn(n) {
+    const p = new Promise(function (resolve) {
+        //basically thread ko bsy krn k liye perform synchronous task otherwise perfor synchronous task
+        for (let i = 0; i < n; i++) {
+            console.log("Thread bsy");
+        }
+    })
+    return p;
 }
 
-module.exports = sleep;
+khudkafn(5000).then(function (val) {
+    console.log(val);
+})
+
+console.log("hlw ji");

@@ -5,19 +5,43 @@
  */
 
 function wait1(t) {
+    const p1 = new Promise((resolve) => {
+        //perform async task here
+        setTimeout(() => {
+            resolve("Promise1 on resolved")
+        }, t);
+    })
+
+    return p1;
 
 }
 
 function wait2(t) {
+    const p2 = new Promise((resolve) => {
+        //perform async task here
+        setTimeout(() => {
+            resolve("Promise2 on resolved")
+        }, t);
+    })
 
+    return p2;
 }
 
 function wait3(t) {
+    const p3 = new Promise((resolve) => {
+        //perform async task here
+        setTimeout(() => {
+            resolve("Promise3 on resolved")
+        }, t);
+    })
 
+    return p3;
 }
 
-function calculateTime(t1, t2, t3) {
-
+function calculateTime(time1, time2, time3) {
+    Promise.all([wait1(time1), wait2(time2), wait3(time3)]).then((values) => {
+        console.log(values);
+    })
 }
 
-module.exports = calculateTime;
+calculateTime(1000, 2000, 5000)

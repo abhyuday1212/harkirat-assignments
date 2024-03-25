@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apis testing</title>
+</head>
+
+<body>
+    <h1>Calcualte simple interest here</h1>
+
+    <div id="result"></div>
+    <button onclick="fetchData()">Calculate data</button>
+
+
+    <script>
+        const fetchData = async () => {
+            let principal = parseInt(133524)
+            let rate = parseInt(12)
+            let time = parseInt(32)
+            const response = await fetch(`http://localhost:8000/interest?principal=${principal}&rate=${rate}&time=${time}`)
+
+            const data = await response.json();
+            const resultVal = data.result;
+
+            console.log(data.result);
+
+            const resultElement = document.getElementById("result");
+
+            resultElement.innerHTML = "";
+
+            // const htmlString = JSON.stringify(data, null, 2); 
+            // // 2 is the indentation level for pretty printing
+
+            resultElement.innerHTML = `<span>Final Value : ${resultVal}</span>`;
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

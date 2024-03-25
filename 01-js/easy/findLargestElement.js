@@ -5,8 +5,8 @@
   - Output: 9
 */
 
-function findLargestElement(numbers) {
-    
-}
+// function findLargestElement(numbers) {
+//     console.log(numbers);
+// }
 
-module.exports = findLargestElement;
+// findLargestElement(42);
