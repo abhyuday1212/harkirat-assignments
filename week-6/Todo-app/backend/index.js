@@ -70,18 +70,17 @@ app.put("/completed", async function (req, res) {
 
     // Update the data in the database
     try {
-        await todos.findByIdAndUpdate(
-            {
-                _id: req.body.id
-            },
-            {
-                completed: true
-            }
+        const updatedTodos = await todos.findByIdAndUpdate(
+            { _id: req.body.id },
+            { completed: true },
+            { new: true }
         )
 
-        return res.json({
-            msg: "Todo updated successfully"
-        })
+        if (updatedTodos) {
+            return res.status(200).json({ message: 'success' });
+        } else {
+            return res.status(404).json({ message: 'Configuration not found' });
+        }
     } catch (error) {
         return res.json({
             msg: "Something went wrong while updation"
