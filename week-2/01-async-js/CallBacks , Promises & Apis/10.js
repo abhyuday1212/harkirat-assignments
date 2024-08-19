@@ -11,7 +11,7 @@ const apiCall = async (todo) => {
     }
     let p = await fetch('https://jsonplaceholder.typicode.com/posts', options)
     let response = await p.json()
-    return response
+    console.log(response);
 }
 
 // const getTodo = async (id) => {
@@ -19,6 +19,21 @@ const apiCall = async (todo) => {
 //     let r = await response.json()
 //     return r
 // }
+
+const postController = async (PostData) => {
+    let options = {
+        method: "POST",
+        headers: {
+            "Content-type": "aplication/json"
+        }
+    }
+
+    let p = await fetch('https://jsonplaceholder.typicode.com/posts', options)
+    let response = await p.json()
+    console.log(response);
+}
+
+
 
 const mainFunc = async () => {
     let todo = {

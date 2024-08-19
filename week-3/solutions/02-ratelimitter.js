@@ -16,7 +16,7 @@ setInterval(() => {
 }, 1000)
 // 
 app.use(function(req, res, next) {
-  const userId = req.headers["user-id"];
+  const userId = req.headers.authorization;
 
   if (numberOfRequestsForUser[userId]) {
     numberOfRequestsForUser[userId] = numberOfRequestsForUser[userId] + 1;

@@ -29,9 +29,11 @@ findLastIndexOf("Hello World World", "World");
 // slice
 function getSlice(str, startIndex ,lastIndex) {
   console.log("Original String:", str);
-  console.log("After slice:", str.slice(start, lastIndex));
+  console.log("After slice:", str.slice(startIndex, lastIndex));
 }
 getSlice("Hello World", 0, 5);
+// Original String: HellohgbbnkjWorld
+// After slice: Hell
 
 // substr is depreciated,it is used as str.substr(startIndex,LengthtillItYouAWantToUSe)
 

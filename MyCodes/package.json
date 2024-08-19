@@ -2,7 +2,7 @@
   "name": "mycodes",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index01.js",
   "type": "module",
   "scripts": {
     "start": "node index01.js",

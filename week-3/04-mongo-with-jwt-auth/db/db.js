@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import dotenv from "dotenv"
 dotenv.config();
 
@@ -36,7 +36,7 @@ const CourseSchema = new mongoose.Schema({
 });
 
 // Variable_name = mongoose.model("Collection_Name",Schema_Name)
-// export the variable
+// export the variable 
 
 const Admin = mongoose.model("Admin", AdminSchema)
 const User = mongoose.model('User', UserSchema);

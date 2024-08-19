@@ -25,6 +25,7 @@ const CourseSchema = new mongoose.Schema({
     price: Number
 });
 
+
 // Variable_name = mongoose.model("Collection_Name",Schema_Name)
 // export the variable
 

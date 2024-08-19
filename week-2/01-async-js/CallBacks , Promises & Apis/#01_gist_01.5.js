@@ -111,7 +111,7 @@ function main() {
     });
 }
 
-main(); 
+main();
 
 
 
@@ -185,4 +185,18 @@ async function main() {
 }
 
 main();
+
+
+const someAsyncFn = async (cb) => {
+    cb("Hi ji")
+}
+
+function mainFn() {
+    someAsyncFn(function (val) {
+        console.log(val);
+    })
+
+}
+
+mainFn()
 
