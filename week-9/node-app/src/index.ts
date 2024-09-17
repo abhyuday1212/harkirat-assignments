@@ -7,26 +7,26 @@ function xyz(id: number): void {
 
 //---------------------------------------------------------------------
 
-// interface Person {
-//   name: string;
-//   age: number;
-//   greet(phrase: string): void;
-// }
+interface Person {
+  name: string;
+  age: number;
+  greet(phrase: string): void;
+}
 
-// class Manager implements Person {
-//   // If we are implementing Person interface than in type script we need to hace defined that for whichever class we are implementing
-//   name: string;
-//   age: number;
+class Manager implements Person {
+  // If we are implementing Person interface than in type script we need to hace defined that for whichever class we are implementing
+  name: string;
+  age: number;
 
-//   constructor(x: string, y: number) {
-//     this.name = x;
-//     this.age = y;
-//   }
+  constructor(x: string, y: number) {
+    this.name = x;
+    this.age = y;
+  }
 
-//   greet(phrase: string): void {
-//     console.log(`${phrase} ${this.name}`);
-//   }
-// }
+  greet(phrase: string): void {
+    console.log(`${phrase} ${this.name}`);
+  }
+}
 
 // ---------------- types in typescript -----------------------
 
@@ -52,6 +52,23 @@ function abc(cbFunction1: (str: string, num: number) => string): string {
   const x = cbFunction1("2", 2);
   return "1";
 }
+
+
+//------------------------- example of callback function that accept argument as function
+
+///! arguments: it tells that fn is some function that accepts no argument and the will not have any return type
+function runAfter1s(fn: () => void) {
+  setTimeout(fn, 1000);
+}
+
+runAfter1s(function () {
+  console.log("Hiii there");
+  
+})
+
+
+
+
 //--------------------------------------------------------------------
 
 interface Manager1 {
